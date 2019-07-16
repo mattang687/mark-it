@@ -1,0 +1,19 @@
+{
+    "name": "Mark-It",
+    "description": "Simple Markdown Note Taker",
+    "version": "1.0",
+    "manifest_version": 2,
+    "browser_action": {
+        "default_popup": "notepad.html",
+        "default_icon": "icons/icon-32.png"
+    },
+    "commands": {
+        "_execute_browser_action": {
+            "suggested_key": {
+                "default": "Ctrl+Shift+F",
+                "mac": "MacCtrl+Shift+F"
+            },
+            "description": "Opens notepad"
+        }
+    }
+}
