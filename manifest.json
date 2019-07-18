@@ -21,5 +21,6 @@
     },
     "chrome_url_overrides": {
         "newtab": "newTab/newTab.html"
-    }
+    },
+    "content_security_policy": "script-src 'self' https://cdn.jsdelivr.net; object-src 'self'"
 }

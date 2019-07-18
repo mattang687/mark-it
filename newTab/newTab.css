@@ -6,3 +6,9 @@ textarea {
     overflow: auto;
     resize: none;
 }
+
+#markdownTarget {
+    border: 1px dashed black;
+    width: 600px;
+    height: 500px;
+}
