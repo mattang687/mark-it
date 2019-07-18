@@ -2,22 +2,23 @@ function onError(error) {
     console.log(error);
 }
 
-function getNotes() {
+async function getNotes() {
     // we store notes in a single file, should only have one object in results
-    browser.storage.local.get(null).then((results) => {
-        var data = results["notes"];
-        if (data == null) {
-            data = "";
+    await browser.storage.local.get(null).then((results) => {
+        var text = results["notes"];
+        if (text == null) {
+            text = "";
         }
-        textarea.value = data;
+        textarea.value = text;
         console.log("got notes");
     }, onError);
+    return;
 }
 
 function save() {
     var key = "notes";
-    var data = textarea.value;
-    var storingNote = browser.storage.local.set({ [key]: data });
+    var text = textarea.value;
+    var storingNote = browser.storage.local.set({ [key]: text });
     storingNote.then(() => {
         console.log("saved");
     }, onError);
