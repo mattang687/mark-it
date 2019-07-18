@@ -4,7 +4,7 @@
     "version": "1.0",
     "manifest_version": 2,
     "browser_action": {
-        "default_popup": "notepad.html",
+        "default_popup": "notepad/notepad.html",
         "default_icon": "icons/icon-32.png"
     },
     "permissions": [
@@ -19,9 +19,7 @@
             "description": "Opens notepad"
         }
     },
-    "background": {
-        "scripts": [
-            "background.js"
-        ]
+    "chrome_url_overrides": {
+        "newtab": "newTab/newTab.html"
     }
 }

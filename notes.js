@@ -1,11 +1,6 @@
-var textarea = document.getElementById("pad");
-textarea.onkeyup = save;
-
 function onError(error) {
     console.log(error);
 }
-
-getNotes();
 
 function getNotes() {
     // we store notes in a single file, should only have one object in results
