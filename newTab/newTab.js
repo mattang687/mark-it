@@ -4,7 +4,6 @@ var markdownTarget = document.getElementById("markdownTarget");
 textarea.onkeyup = save;
 textarea.style.display = "none";
 
-showdown.setFlavor('github');
 getAndConvert();
 
 browser.commands.onCommand.addListener(function(command) {
@@ -14,23 +13,9 @@ browser.commands.onCommand.addListener(function(command) {
     }
   });
 
-function convert(text) {
-    var text = textarea.value,
-    converter = new showdown.Converter({
-        "simplifiedAutoLink": true,
-        "strikethrough": true,
-        "tables": true,
-        "tasklists": true,
-        "smoothLivePreview": true,
-        "smartIndentationFix": true,
-        "disableForced4SpacesIndentedSublists": true,
-        "simpleLineBreaks": true,
-        "openLinksInNewWindow": true,
-        "emoji": true,
-        "underline": true,
-    }),
-    html = converter.makeHtml(text);
-    markdownTarget.innerHTML = html;
+function convert() {
+    var text = textarea.value;
+    markdownTarget.innerHTML = marked(text);
 }
 
 async function getAndConvert() {
