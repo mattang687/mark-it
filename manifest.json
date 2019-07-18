@@ -18,5 +18,10 @@
             },
             "description": "Opens notepad"
         }
+    },
+    "background": {
+        "scripts": [
+            "background.js"
+        ]
     }
 }
