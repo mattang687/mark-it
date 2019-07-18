@@ -1,0 +1,5 @@
+textarea {
+    border: none;
+    overflow: auto;
+    resize: none;
+}
