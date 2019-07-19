@@ -2,4 +2,6 @@ textarea {
     border: none;
     overflow: auto;
     resize: none;
+    font-family: 'Inconsolata', monospace;
+    font-size: 16px;    
 }

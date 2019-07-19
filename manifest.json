@@ -20,8 +20,8 @@
         },
         "new_tab_switch_mode": {
             "suggested_key": {
-                "default": "Ctrl+Comma",
-                "mac": "MacCtrl+Comma"
+                "default": "Ctrl+Space",
+                "mac": "MacCtrl+Space"
             },
             "description": "Sends command to switch between view and edit on new tab page"
         }
