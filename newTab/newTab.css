@@ -9,10 +9,17 @@ textarea {
     height: 100%;
     overflow: auto;
     resize: none;
+    padding-left: 15%;
+    padding-right: 15%;
+    font-family: 'Inconsolata', monospace;
 }
 
 #markdownTarget {
     border: none;
-    width: 100%;
+    width: 70%;
     height: 100%;
+    padding-left: 15%;
+    padding-right: 15%;
+    word-wrap: break-word;
+    font-family: 'Noto Sans', sans-serif;
 }
