@@ -5,7 +5,7 @@ function onError(error) {
 async function getNotes() {
     // we store notes in a single file, should only have one object in results
     await browser.storage.local.get(null).then((results) => {
-        var text = results["notes"];
+        let text = results["notes"];
         if (text == null) {
             text = "";
         }
@@ -16,9 +16,9 @@ async function getNotes() {
 }
 
 function save() {
-    var key = "notes";
-    var text = textarea.value;
-    var storingNote = browser.storage.local.set({ [key]: text });
+    const key = "notes";
+    const text = textarea.value;
+    const storingNote = browser.storage.local.set({ [key]: text });
     storingNote.then(() => {
         console.log("saved");
     }, onError);

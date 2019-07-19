@@ -1,5 +1,5 @@
-var textarea = document.getElementById("newTabPad");
-var markdownTarget = document.getElementById("markdownTarget");
+const textarea = document.getElementById("newTabPad");
+const markdownTarget = document.getElementById("markdownTarget");
 const button = document.getElementById("changeViewButton");
 
 textarea.onkeyup = save;
@@ -19,8 +19,9 @@ browser.commands.onCommand.addListener(function (command) {
 getAndConvert();
 
 function convert() {
-    var text = textarea.value;
-    markdownTarget.innerHTML = marked(text);
+    const text = textarea.value;
+    const html = marked(text);
+    markdownTarget.innerHTML = html;
 }
 
 async function getAndConvert() {
