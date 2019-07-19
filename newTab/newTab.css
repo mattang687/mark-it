@@ -12,6 +12,7 @@ textarea {
     padding-left: 15%;
     padding-right: 15%;
     font-family: 'Inconsolata', monospace;
+    font-size: 20px;
 }
 
 #markdownTarget {
@@ -21,5 +22,6 @@ textarea {
     padding-left: 15%;
     padding-right: 15%;
     word-wrap: break-word;
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
 }
