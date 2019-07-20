@@ -5,7 +5,7 @@ textarea.onkeyup = save;
 
 markdownTarget.style.display = "none";
 
-browser.commands.onCommand.addListener(function (command) {
+chrome.commands.onCommand.addListener(function (command) {
     if (command == "new_tab_switch_mode") {
         console.log("switching mode");
         convertAndSwitch();
