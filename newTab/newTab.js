@@ -18,17 +18,6 @@ browser.commands.onCommand.addListener(function (command) {
 
 getAndConvert();
 
-function convert() {
-    const text = textarea.value;
-    const html = marked(text);
-    markdownTarget.innerHTML = html;
-}
-
-async function getAndConvert() {
-    await getNotes();
-    convert();
-}
-
 function convertAndSwitch() {
     convert();
     if (textarea.style.display === "none") {

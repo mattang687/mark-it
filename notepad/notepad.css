@@ -1,7 +1,33 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#popup {
+    min-width: 600px;
+    height: 400px;
+}
+
 textarea {
     border: none;
+    margin: 0;
+    width: 99%;
+    height: 100%;
+    float: right;
     overflow: auto;
     resize: none;
     font-family: 'Inconsolata', monospace;
     font-size: 16px;    
+}
+
+#markdownTarget {
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: 99%;
+    height: 100%;
+    float: right;
+    word-wrap: break-word;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
 }

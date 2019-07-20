@@ -15,6 +15,17 @@ async function getNotes() {
     return;
 }
 
+function convert() {
+    const text = textarea.value;
+    const html = marked(text);
+    markdownTarget.innerHTML = html;
+}
+
+async function getAndConvert() {
+    await getNotes();
+    convert();
+}
+
 function save() {
     const key = "notes";
     const text = textarea.value;
