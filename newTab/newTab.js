@@ -42,4 +42,5 @@ function convertAndSwitch() {
         button.innerText = "VIEW";
         button.style.background = "#fb9f89";
     }
+    textarea.focus();
 }

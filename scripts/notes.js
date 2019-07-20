@@ -7,7 +7,7 @@ async function getNotes() {
     await browser.storage.local.get(null).then((results) => {
         let text = results["notes"];
         if (text == null) {
-            text = "";
+            text = "Enter Notes Here!\n\n(Switch to Edit Mode with `Ctrl + Space` If You're in a New Tab)";
         }
         textarea.value = text;
         console.log("got notes");
