@@ -1,11 +1,11 @@
 # Mark-It
 Make quick, pretty notes without having to tab out of your browser!
 
-<img src="/screenshots/viewMode.PNG" width="1024" height="576">
+<img src="/screenshots/viewMode.PNG" width="896" height="504">
 
-<img src="/screenshots/editMode.PNG" width="1024" height="576">
+<img src="/screenshots/editMode.PNG" width="896" height="504">
 
-<img src="/screenshots/popup.PNG" width="1024" height="576">
+<img src="/screenshots/popup.PNG" width="896" height="504">
 
 ## Introduction
 I love how quickly Markdown allows me to format documents, and I was surprised to find that there weren't any Markdown note taking extensions out there. Here's my take on the perfect note taking extension (for me).
