@@ -16,7 +16,7 @@ chrome.commands.onCommand.addListener(function (command) {
     }
 });
 
-getAndConvert();
+getNotes();
 
 function convertAndSwitch() {
     convert();
