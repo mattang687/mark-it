@@ -10,7 +10,6 @@ body {
 
 textarea {
     border: none;
-    margin: 0;
     width: 99%;
     height: 100%;
     float: right;
@@ -22,11 +21,10 @@ textarea {
 
 #markdownTarget {
     border: none;
-    margin: 0;
-    padding: 0;
-    width: 99%;
+    margin-left: 1%;
+    margin-right: 1%;
+    width: 98%;
     height: 100%;
-    float: right;
     word-wrap: break-word;
     font-family: 'Quicksand', sans-serif;
     font-size: 16px;
