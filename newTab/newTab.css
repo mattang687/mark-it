@@ -7,7 +7,7 @@ html, body {
 textarea {
     border: none;
     outline: none;
-    width: 100%;
+    width: 50%;
     height: 100%;
     overflow: auto;
     resize: none;
