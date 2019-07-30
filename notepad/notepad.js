@@ -1,9 +1,11 @@
 const textarea = document.getElementById("pad");
 const markdownTarget = document.getElementById("markdownTarget");
 
-textarea.onkeyup = save;
-
+// start in edit mode
 markdownTarget.style.display = "none";
+
+// override tab and shift + tab
+setTabHandler(textarea);
 
 chrome.commands.onCommand.addListener(function (command) {
     if (command == "new_tab_switch_mode") {
