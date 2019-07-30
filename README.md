@@ -13,7 +13,7 @@ I love how quickly Markdown allows me to format documents, and I was surprised t
 - All notes are saved instantly and persist between sessions
 
 ## Usage
-I'm currently in the process of releasing this to the Firefox and Chrome stores, and I'll update the readme as they are released.
+Mark-It is available for [Firefox](https://addons.mozilla.org/en-US/firefox/addon/mark-it/?src=search) and [Chrome](https://chrome.google.com/webstore/detail/mark-it/pfodanikhbfnlkdaoeppjiijfgpeaglm?hl=en)!
 
 To see your notes, open a new tab. The new tab page will default to View mode.
 
