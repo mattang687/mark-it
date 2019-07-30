@@ -2,8 +2,11 @@ const textarea = document.getElementById("newTabPad");
 const markdownTarget = document.getElementById("markdownTarget");
 const button = document.getElementById("changeViewButton");
 
-textarea.onkeyup = save;
+// start in view mode by default
 textarea.style.display = "none";
+
+// override tab and shift + tab
+setTabHandler(textarea);
 
 button.innerText = "VIEW";
 button.style.background = "#fb9f89";

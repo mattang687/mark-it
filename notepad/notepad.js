@@ -1,7 +1,8 @@
 const textarea = document.getElementById("pad");
 const markdownTarget = document.getElementById("markdownTarget");
 
-textarea.onkeyup = save;
+// override tab and shift + tab
+setTabHandler(textarea);
 
 markdownTarget.style.display = "none";
 
