@@ -2,24 +2,24 @@ const textarea = document.getElementById("newTabPad");
 const markdownTarget = document.getElementById("markdownTarget");
 const button = document.getElementById("changeViewButton");
 
-// start in view mode by default
+// start in view mode
 textarea.style.display = "none";
 
 // override tab and shift + tab
-setTabHandler(textarea);
+setTabHandler(textarea)
 
 button.innerText = "VIEW";
 button.style.background = "#fb9f89";
 button.addEventListener('click', convertAndSwitch);
 
-browser.commands.onCommand.addListener(function (command) {
+chrome.commands.onCommand.addListener(function (command) {
     if (command == "new_tab_switch_mode") {
         console.log("switching mode");
         convertAndSwitch();
     }
 });
 
-getAndConvert();
+getNotes();
 
 function convertAndSwitch() {
     convert();

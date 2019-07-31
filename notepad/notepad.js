@@ -1,19 +1,20 @@
 const textarea = document.getElementById("pad");
 const markdownTarget = document.getElementById("markdownTarget");
 
+// start in edit mode
+markdownTarget.style.display = "none";
+
 // override tab and shift + tab
 setTabHandler(textarea);
 
-markdownTarget.style.display = "none";
-
-browser.commands.onCommand.addListener(function (command) {
+chrome.commands.onCommand.addListener(function (command) {
     if (command == "new_tab_switch_mode") {
         console.log("switching mode");
         convertAndSwitch();
     }
 });
 
-getAndConvert();
+getNotes();
 
 function convertAndSwitch() {
     convert();
