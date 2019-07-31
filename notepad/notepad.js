@@ -4,12 +4,14 @@ const markdownTarget = document.getElementById("markdownTarget");
 // start in edit mode
 markdownTarget.style.display = "none";
 
-// override tab and shift + tab
-setTabHandler(textarea);
+// detect whether the user is typing and override tab and shift + tab
+setKeyPressHandler(textarea);
+
+// update notes on change
+setUpdateHandler(textarea);
 
 chrome.commands.onCommand.addListener(function (command) {
     if (command == "new_tab_switch_mode") {
-        console.log("switching mode");
         convertAndSwitch();
     }
 });

@@ -8,7 +8,6 @@ async function getNotes() {
         textarea.value = text;
         convert();
         save();
-        console.log("got notes");
     });
     return;
 }
@@ -17,24 +16,42 @@ function convert() {
     const text = textarea.value;
     const html = marked(text);
     markdownTarget.innerHTML = html;
-    console.log("convert");
 }
 
 function save() {
     const key = "notes";
     const text = textarea.value;
     chrome.storage.local.set({ [key]: text });
-    console.log("save");
 }
 
-// override tab and shift + tab
+// get notes when the local storage changes
+// storage will only be updated when the user stops typing
+function setUpdateHandler(textarea) {
+    chrome.storage.onChanged.addListener((changes) => {
+        let storageChange = changes["notes"];
+        if (storageChange != null) {
+            textarea.value = storageChange.newValue;
+            convert();
+        }
+    })
+}
+
+// save after user stops typing and override tab and shift + tab
 let shifted = false;
-function setTabHandler(textarea) {
+function setKeyPressHandler(textarea) {
+    let timeout = null;
+
     textarea.onkeyup = function(evt) {
+        // check for shift
         if (evt.keyCode === 16) {
             shifted = false;
         }
-        save();
+
+        // clear timeout if typing, otherwise schedule save() in 1s
+        clearTimeout(timeout);
+        timeout = setTimeout(() => {
+            save();
+        }, 1000)
     };
 
     textarea.onkeydown = function(evt) {

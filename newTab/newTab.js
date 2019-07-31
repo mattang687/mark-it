@@ -6,7 +6,9 @@ const button = document.getElementById("changeViewButton");
 textarea.style.display = "none";
 
 // override tab and shift + tab
-setTabHandler(textarea)
+setKeyPressHandler(textarea)
+
+setUpdateHandler(textarea);
 
 button.innerText = "VIEW";
 button.style.background = "#fb9f89";
@@ -14,7 +16,6 @@ button.addEventListener('click', convertAndSwitch);
 
 chrome.commands.onCommand.addListener(function (command) {
     if (command == "new_tab_switch_mode") {
-        console.log("switching mode");
         convertAndSwitch();
     }
 });
