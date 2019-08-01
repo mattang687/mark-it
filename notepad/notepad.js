@@ -1,7 +1,6 @@
 const textarea = document.getElementById("pad");
 const markdownTarget = document.getElementById("markdownTarget");
 const changeViewButton = document.getElementById("changeViewButton");
-const openNotesButton = document.getElementById("openNotesButton");
 const indicator = document.getElementById("savingIndicator");
 
 // start in edit mode
@@ -17,8 +16,6 @@ setUpdateHandler(textarea);
 changeViewButton.innerText = "EDIT";
 changeViewButton.style.background = "#81ae9d";
 changeViewButton.addEventListener('click', convertAndSwitch);
-
-openNotesButton.addEventListener('click', () => openNotes());
 
 function openNotes() {
     console.log("click");

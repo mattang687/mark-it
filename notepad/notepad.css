@@ -59,13 +59,11 @@ button {
     color: #000;
 }
 
-#openNotesButton {
-    background-color: rgba(255, 255, 255, 0);
-}
-
 #savingIndicator {
     float: left;
     padding: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
     font-family: 'Inconsolata', monospace;
     font-size: 14px;
     color: #dbdbdb;
