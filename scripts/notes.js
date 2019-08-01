@@ -30,28 +30,28 @@ function save() {
     textarea.value = text;
     convert();
   });
-
-  return;
 })();
 
 // switch between view and edit
 // if in edit, convert text before switching
 function switchMode() {
-  if (textarea.style.display === "none") {
-    // in view mode, switching to edit
-    textarea.style.display = "block";
-    markdownTarget.style.display = "none";
-    changeModeButton.innerText = "EDIT";
-    changeModeButton.style.background = "#81ae9d";
-  } else {
-    // in edit mode, switching to view
-    convert();
-    textarea.style.display = "none";
-    markdownTarget.style.display = "block";
-    changeModeButton.innerText = "VIEW";
-    changeModeButton.style.background = "#fb9f89";
+  if (!document.hidden) {
+    if (textarea.style.display === "none") {
+      // in view mode, switching to edit
+      textarea.style.display = "block";
+      markdownTarget.style.display = "none";
+      changeModeButton.innerText = "EDIT";
+      changeModeButton.style.background = "#81ae9d";
+    } else {
+      // in edit mode, switching to view
+      convert();
+      textarea.style.display = "none";
+      markdownTarget.style.display = "block";
+      changeModeButton.innerText = "VIEW";
+      changeModeButton.style.background = "#fb9f89";
+    }
+    textarea.focus();
   }
-  textarea.focus();
 }
 
 // bind switchMode to changeModeButton
@@ -68,7 +68,7 @@ chrome.commands.onCommand.addListener(function(command) {
 // storage will only be updated when the user stops typing
 chrome.storage.onChanged.addListener(changes => {
   let storageChange = changes["notes"];
-  if (storageChange != null) {
+  if (storageChange != null && !document.hasFocus()) {
     textarea.value = storageChange.newValue;
     convert();
   }
@@ -86,7 +86,7 @@ function waitToSave() {
     save();
     // hide saving indicator
     indicator.style.opacity = "0";
-  }, 400);
+  }, 500);
 }
 
 // trigger waitToSave on input
