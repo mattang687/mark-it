@@ -1,15 +1,22 @@
 const textarea = document.getElementById("pad");
 const markdownTarget = document.getElementById("markdownTarget");
+const changeViewButton = document.getElementById("changeViewButton");
+const openNotesButton = document.getElementById("openNotesButton");
+const indicator = document.getElementById("savingIndicator");
 
 // start in edit mode
 markdownTarget.style.display = "none";
 
 // handle indentation
-setKeyPressHandler(textarea);
+setKeyPressHandler(textarea, indicator);
 // wait until typing stops to save
-setWaitToSave(textarea);
+setWaitToSave(textarea, indicator);
 // update contents when changed in another tab
 setUpdateHandler(textarea);
+
+changeViewButton.innerText = "EDIT";
+changeViewButton.style.background = "#81ae9d";
+changeViewButton.addEventListener('click', convertAndSwitch);
 
 chrome.commands.onCommand.addListener(function (command) {
     if (command == "new_tab_switch_mode") {
@@ -24,9 +31,13 @@ function convertAndSwitch() {
     if (textarea.style.display === "none") {
         textarea.style.display = "block";
         markdownTarget.style.display = "none";
+        changeViewButton.innerText = "EDIT";
+        changeViewButton.style.background = "#81ae9d";
     } else {
         textarea.style.display = "none";
         markdownTarget.style.display = "block";
+        changeViewButton.innerText = "VIEW";
+        changeViewButton.style.background = "#fb9f89";
     }
     textarea.focus();
 }
