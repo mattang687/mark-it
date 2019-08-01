@@ -36,22 +36,35 @@ function setUpdateHandler(textarea) {
     })
 }
 
+// listen to inputs and wait until typing stops before saving
+let timeout = null;
+function waitToSave(indicator) {
+    // show saving indicator
+    if (indicator != null) indicator.style.opacity = "1";
+
+    // clear timeout if typing, otherwise schedule save() in 1s
+    clearTimeout(timeout);
+    timeout = setTimeout(() => {
+        save();
+        // hide saving indicator
+        if (indicator != null) indicator.style.opacity = "0";
+    }, 1000)
+}
+
+function setWaitToSave(textarea, indicator) {
+    textarea.addEventListener("input", () => waitToSave(indicator));
+}
+
 // save after user stops typing and override tab and shift + tab
-let shifted = false;
-function setKeyPressHandler(textarea) {
-    let timeout = null;
+// provide indicator to save on indentation changes
+function setKeyPressHandler(textarea, indicator) {
+    let shifted = false;
 
     textarea.onkeyup = function(evt) {
         // check for shift
         if (evt.keyCode === 16) {
             shifted = false;
         }
-
-        // clear timeout if typing, otherwise schedule save() in 1s
-        clearTimeout(timeout);
-        timeout = setTimeout(() => {
-            save();
-        }, 1000)
     };
 
     textarea.onkeydown = function(evt) {
@@ -77,6 +90,9 @@ function setKeyPressHandler(textarea) {
                 textarea.selectionStart = start - (tabEnd - lineStart);
                 textarea.selectionEnd = end - (tabEnd - lineStart);
             }
+
+            // tab doesn't count as a textarea input, so manually call waitToSave()
+            waitToSave(indicator);
 
             // prevent focusing next element
             evt.preventDefault();

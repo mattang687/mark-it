@@ -20,6 +20,21 @@ textarea {
     font-size: 22px;
 }
 
+#savingIndicator {
+    position: fixed;
+    bottom: 31px;
+    left: 90px;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    padding: 10px;
+    font-family: 'Inconsolata', monospace;
+    font-size: 14px;
+    color: #8e8e8e;
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+}
+
 #changeViewButton {
     position: fixed;
     bottom: 30px;

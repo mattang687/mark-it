@@ -1,13 +1,16 @@
 const textarea = document.getElementById("newTabPad");
 const markdownTarget = document.getElementById("markdownTarget");
 const button = document.getElementById("changeViewButton");
+const indicator = document.getElementById("savingIndicator");
 
 // start in view mode
 textarea.style.display = "none";
 
-// override tab and shift + tab
-setKeyPressHandler(textarea)
-
+// handle indentation
+setKeyPressHandler(textarea, indicator);
+// wait until typing stops to save
+setWaitToSave(textarea, indicator);
+// update contents when changed in another tab
 setUpdateHandler(textarea);
 
 button.innerText = "VIEW";

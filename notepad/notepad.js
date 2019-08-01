@@ -4,10 +4,11 @@ const markdownTarget = document.getElementById("markdownTarget");
 // start in edit mode
 markdownTarget.style.display = "none";
 
-// detect whether the user is typing and override tab and shift + tab
+// handle indentation
 setKeyPressHandler(textarea);
-
-// update notes on change
+// wait until typing stops to save
+setWaitToSave(textarea);
+// update contents when changed in another tab
 setUpdateHandler(textarea);
 
 chrome.commands.onCommand.addListener(function (command) {
