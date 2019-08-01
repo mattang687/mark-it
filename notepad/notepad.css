@@ -1,72 +1,65 @@
-body {
-    margin: 0;
-    padding: 0;
+body,
+textarea,
+#markdownTarget {
+  margin: 0;
+  padding: 0;
+}
+
+textarea,
+#markdownTarget {
+  border: none;
+  outline: none;
+  padding-left: 4px;
+  padding-right: 4px;
+  width: calc(100% - 8px);
+  height: calc(100% - 20px);
+  word-wrap: break-word;
+  overflow: auto;
+  resize: none;
+  font-size: 16px;
 }
 
 textarea {
-    border: none;
-    outline: none;
-    margin: 0;
-    padding: 0;
-    width: 99%;
-    height: calc(100% - 20px);
-    float: right;
-    word-wrap: break-word;
-    overflow: auto;
-    resize: none;
-    font-family: 'Inconsolata', monospace;
-    font-size: 16px;    
+  font-family: "Inconsolata", monospace;
 }
 
 #markdownTarget {
-    border: none;
-    outline: none;
-    margin: 0;
-    padding: 0;
-    margin-left: 1%;
-    width: 99%;
-    height: calc(100% - 20px);
-    word-wrap: break-word;
-    overflow: auto;
-    font-family: 'Quicksand', sans-serif;
-    font-size: 16px;
+  font-family: "Quicksand", sans-serif;
 }
 
 #popup {
-    min-width: 600px;
-    height: 400px;
+  width: 600px;
+  height: 400px;
 }
 
 #bar {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    height: 20px;
-    width: 100%;
-    background-color: #8e8e8e;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 20px;
+  width: 100%;
+  background-color: #8e8e8e;
+}
+
+button,
+#savingIndicator {
+  float: left;
+  height: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-family: "Inconsolata", monospace;
+  font-size: 14px;
+  transition: all 0.3s ease-in-out;
 }
 
 button {
-    float: left;
-    border: none;
-    outline: none;
-    padding: 3px;
-    padding-left: 5px;
-    padding-right: 5px;
-    font-family: 'Inconsolata', monospace;
-    font-size: 14px;
-    transition: all 0.3s ease-in-out;
-    color: #000;
+  border: none;
+  outline: none;
+  color: #000;
 }
 
 #savingIndicator {
-    float: left;
-    padding: 2px;
-    padding-left: 5px;
-    padding-right: 5px;
-    font-family: 'Inconsolata', monospace;
-    font-size: 14px;
-    color: #dbdbdb;
-    transition: all 0.3s ease-in-out;
-    opacity: 0;
+  padding-top: 2px;
+  color: #dbdbdb;
+  opacity: 0;
 }
