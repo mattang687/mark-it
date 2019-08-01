@@ -18,6 +18,13 @@ changeViewButton.innerText = "EDIT";
 changeViewButton.style.background = "#81ae9d";
 changeViewButton.addEventListener('click', convertAndSwitch);
 
+openNotesButton.addEventListener('click', () => openNotes());
+
+function openNotes() {
+    console.log("click");
+    chrome.tabs.create({url: chrome.extension.getURL("/newTab/newTab.html")})
+}
+
 chrome.commands.onCommand.addListener(function (command) {
     if (command == "new_tab_switch_mode") {
         convertAndSwitch();

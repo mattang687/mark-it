@@ -3,56 +3,6 @@ body {
     padding: 0;
 }
 
-#popup {
-    min-width: 600px;
-    height: 400px;
-}
-
-#bar {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    height: 20px;
-    width: 100%;
-    background-color: #8e8e8e;
-}
-
-#changeViewButton {
-    float: left;
-    border: none;
-    outline: none;
-    padding: 3px;
-    padding-left: 5px;
-    padding-right: 5px;
-    font-family: 'Inconsolata', monospace;
-    font-size: 14px;
-    transition: all 0.3s ease-in-out;
-}
-
-#savingIndicator {
-    float: left;
-    padding: 2px;
-    font-family: 'Inconsolata', monospace;
-    font-size: 14px;
-    color: #bfbfbf;
-    transition: all 0.3s ease-in-out;
-    opacity: 0;
-}
-
-#openNotesButton {
-    float: left;
-    border: none;
-    outline: none;
-    padding: 3px;
-    padding-left: 5px;
-    padding-right: 5px;
-    font-family: 'Inconsolata', monospace;
-    font-size: 14px;
-    background-color: rgba(255, 255, 255, 0);
-    color: #000;
-    transition: all 0.3s ease-in-out;
-}
-
 textarea {
     border: none;
     outline: none;
@@ -70,6 +20,7 @@ textarea {
 
 #markdownTarget {
     border: none;
+    outline: none;
     margin: 0;
     padding: 0;
     margin-left: 1%;
@@ -79,4 +30,45 @@ textarea {
     overflow: auto;
     font-family: 'Quicksand', sans-serif;
     font-size: 16px;
+}
+
+#popup {
+    min-width: 600px;
+    height: 400px;
+}
+
+#bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 20px;
+    width: 100%;
+    background-color: #8e8e8e;
+}
+
+button {
+    float: left;
+    border: none;
+    outline: none;
+    padding: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-family: 'Inconsolata', monospace;
+    font-size: 14px;
+    transition: all 0.3s ease-in-out;
+    color: #000;
+}
+
+#openNotesButton {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+#savingIndicator {
+    float: left;
+    padding: 2px;
+    font-family: 'Inconsolata', monospace;
+    font-size: 14px;
+    color: #dbdbdb;
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
 }

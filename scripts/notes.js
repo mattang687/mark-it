@@ -48,7 +48,7 @@ function waitToSave(indicator) {
         save();
         // hide saving indicator
         if (indicator != null) indicator.style.opacity = "0";
-    }, 1000)
+    }, 500)
 }
 
 function setWaitToSave(textarea, indicator) {
