@@ -18,8 +18,8 @@ function save() {
   chrome.storage.local.set({ [key]: text });
 }
 
-// automatically get notes
-(async function getNotes() {
+// get notes from local storage
+async function getNotes() {
   // all notes are stored in a single string with key "notes"
   await chrome.storage.local.get("notes", results => {
     let text = results["notes"];
@@ -30,9 +30,31 @@ function save() {
     textarea.value = text;
     convert();
   });
-})();
+}
 
-// switch between view and edit
+// get notes when the page is opened
+getNotes();
+
+// update only visible notes when the local storage changes
+// storage will only be updated when the user stops typing
+chrome.storage.onChanged.addListener(changes => {
+  if (!document.hidden) {
+    let storageChange = changes["notes"];
+    if (storageChange != null && !document.hasFocus()) {
+      textarea.value = storageChange.newValue;
+      convert();
+    }
+  }
+});
+
+// hidden notes will be updated when they are shown
+document.addEventListener("visibilitychange", () => {
+  if (!document.hidden) {
+    getNotes();
+  }
+});
+
+// switch between view and edit if the page is visible
 // if in edit, convert text before switching
 function switchMode() {
   if (!document.hidden) {
@@ -64,16 +86,6 @@ chrome.commands.onCommand.addListener(function(command) {
   }
 });
 
-// get notes when the local storage changes
-// storage will only be updated when the user stops typing
-chrome.storage.onChanged.addListener(changes => {
-  let storageChange = changes["notes"];
-  if (storageChange != null && !document.hasFocus()) {
-    textarea.value = storageChange.newValue;
-    convert();
-  }
-});
-
 // wait until typing stops before saving
 let timeout = null;
 function waitToSave() {
@@ -86,7 +98,7 @@ function waitToSave() {
     save();
     // hide saving indicator
     indicator.style.opacity = "0";
-  }, 500);
+  }, 400);
 }
 
 // trigger waitToSave on input
