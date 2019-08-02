@@ -1,0 +1,30 @@
+/* packaging of fonts greatly assisted by majodev's google-webfonts-helper - https://github.com/majodev/google-webfonts-helper/ */
+
+@font-face {
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: 400;
+  src: url("quicksand/quicksand-v13-latin-regular.eot");
+  src: local(""),
+    url("quicksand/quicksand-v13-latin-regular.eot?#iefix")
+      format("embedded-opentype"),
+    url("quicksand/quicksand-v13-latin-regular.woff2") format("woff2"),
+    url("quicksand/quicksand-v13-latin-regular.woff") format("woff"),
+    url("quicksand/quicksand-v13-latin-regular.ttf") format("truetype"),
+    url("quicksand/quicksand-v13-latin-regular.svg#Quicksand") format("svg");
+}
+
+@font-face {
+  font-family: "Inconsolata";
+  font-style: normal;
+  font-weight: 400;
+  src: url("inconsolata/inconsolata-v18-latin-regular.eot");
+  src: local("Inconsolata Regular"), local("Inconsolata-Regular"),
+    url("inconsolata/inconsolata-v18-latin-regular.eot?#iefix")
+      format("embedded-opentype"),
+    url("inconsolata/inconsolata-v18-latin-regular.woff2") format("woff2"),
+    url("inconsolata/inconsolata-v18-latin-regular.woff") format("woff"),
+    url("inconsolata/inconsolata-v18-latin-regular.ttf") format("truetype"),
+    url("inconsolata/inconsolata-v18-latin-regular.svg#Inconsolata")
+      format("svg");
+}
