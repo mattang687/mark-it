@@ -43,23 +43,28 @@ textarea {
 
 button,
 #savingIndicator {
-  float: left;
+  position: fixed;
   height: 20px;
-  padding-left: 5px;
-  padding-right: 5px;
   font-family: "Inconsolata", monospace;
   font-size: 14px;
   transition: all 0.3s ease-in-out;
 }
 
 button {
+  bottom: 0;
+  left: 0;
   border: none;
   outline: none;
+  width: 100%;
+  text-align: left;
   color: #000;
 }
 
 #savingIndicator {
-  padding-top: 2px;
-  color: #3f3f3f;
+  bottom: 0;
+  left: 45px;
+  pointer-events: none;
+  line-height: 20px;
+  color: #666666;
   opacity: 0;
 }
