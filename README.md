@@ -23,7 +23,7 @@ To see your notes, open a new tab. The new tab page will default to View mode.
 
 You can also open the popup by pressing `Ctrl + Shift + F` or clicking the toolbar icon. The popup will default to Edit mode.
 
-To switch between View and Edit mode, press `Ctrl + Shift + Space`, or click on the colored mode switch button.
+To switch between View and Edit mode, press `Ctrl + Space`, or click on the colored mode switch button.
 
 When you stop typing, your notes are saved automatically, and all instances of your notes are updated.
 
