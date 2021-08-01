@@ -12,6 +12,10 @@ textarea.dark {
   color: white;
 }
 
+.dark a {
+  color: #7788ff;
+}
+
 body,
 textarea,
 #markdownTarget {
