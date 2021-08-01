@@ -32,6 +32,10 @@ textarea.dark {
   color: white;
 }
 
+.dark a {
+  color: #7788ff;
+}
+
 #savingIndicator {
   position: fixed;
   bottom: 31px;
